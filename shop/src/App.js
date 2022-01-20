@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+/*eslint-disable*/ 
 import './App.css';
-import {Navbar,Nav,NavDropdown,Button,Container } from 'react-bootstrap';
-
+import {Navbar,Nav,NavDropdown,Container } from 'react-bootstrap';
+import React, { useState } from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 
 import Detail from "./detail";
+import data from './data.js';
 
 function App() {
+  let [shoes ,c_shoes] = useState(data);
+
+
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -28,20 +32,18 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Switch>
-      <Route exact path="/">
+     
+      <Route path="/">
         <div className='jumbo'>
           <h1>GON TEST</h1>
         </div>
         <div className='container'>
         <div className='row'>
-          <div className='col-md-4'>1</div>
-          <div className='col-md-4'>2</div>
-          <div className='col-md-4'>3</div>
+          <Card shoes={shoes} />
         </div>
       </div>
       </Route>
-      <Route exact path="/detail">
+      <Route path="/detail">
         <div className='jumbo'>
           <h1>GON TEST</h1>
         </div>
@@ -54,19 +56,26 @@ function App() {
           Swith = 택 1해서 보여주세요
         </div>
       </Route> 
-      </Switch>
-      
+     
     </div>
   );
 }
 
-function Card() {
+function Card(props) {
+  let [imgurl,c_imgurl] = useState(["https://codingapple1.github.io/shop/shoes1.jpg","https://codingapple1.github.io/shop/shoes2.jpg","https://codingapple1.github.io/shop/shoes3.jpg"])
   return(
-    <div className='col-md-4'>
-      detail-routing
-    </div>
+    props.shoes.map(function(a,i){
+      return(
+        <div className='col-md-4'>
+          <img src={imgurl[i]} width="100%" key={i} />
+          <h2> {a.title} </h2>
+          <p> {a.content} / {a.price}</p>
+        </div>
+      )
+    })
   )
 }
+
 
 
 

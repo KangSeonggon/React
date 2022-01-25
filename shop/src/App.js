@@ -33,7 +33,7 @@ function App() {
         </Container>
       </Navbar>
      
-      <Route path="/">
+      <Route exact path="/">
         <div className='jumbo'>
           <h1>GON TEST</h1>
         </div>
@@ -43,19 +43,24 @@ function App() {
         </div>
       </div>
       </Route>
-      <Route path="/detail">
+      <Route exact path="/detail">
         <div className='jumbo'>
           <h1>GON TEST</h1>
         </div>
-        <Detail></Detail>
+        <Detail shoes={shoes}></Detail>
+      </Route>
+
+      <Route path="/detail/:id">
+        <Detail shoes={shoes}></Detail>
       </Route>
       
        
-      <Route path="/:id">
-        <div>주소창에 아무거나 적었을때 이걸 보여줘, 지금은 SWith때문에 안보임
-          Swith = 택 1해서 보여주세요
+      {/* <Route path="/:id">
+        <div>
+          /:id  >>  주소창에 아무거나 적었을때 이걸 보여줘
+          Swith >>  맨 위 route 택 1해서 보여주세요
         </div>
-      </Route> 
+      </Route>  */}
      
     </div>
   );

@@ -1,16 +1,19 @@
 /*eslint-disable*/ 
 import './App.css';
 import {Navbar,Nav,NavDropdown,Container, Button, Spinner } from 'react-bootstrap';
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { createContext, useEffect, useReducer, useState } from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 import Detail from "./detail";
 import data from './data.js';
 
+export let 재고context = React.createContext();
+
 function App() {
   let [shoes ,c_shoes] = useState(data);
   let [load , c_load] = useState(false);
+  let [remain, c_remain] = useState([10,11,12]);
 
   return (
     <div className="App">

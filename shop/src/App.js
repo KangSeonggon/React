@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import Detail from "./detail";
 import data from './data.js';
+import Cart from './Cart.js';
 
 export let 재고context = React.createContext();
 
@@ -77,6 +78,10 @@ function App() {
         <Detail shoes={shoes}></Detail>
       </Route>
       
+      <Route exact path="/cart">
+        <Cart />
+      </Route>
+
        
       {/* <Route path="/:id">
         <div>

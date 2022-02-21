@@ -505,6 +505,7 @@ main .recent-orders a {
 @media screen and (max-width: 1000px) {
     .container{
         width: 94%;
+        overflow: hidden;
         grid-template-columns: 7rem auto 23rem;
         
         
@@ -568,7 +569,7 @@ main .recent-orders a {
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
-        animation: showMenu 400ms ease forwards;
+        animation: showMenu 200ms ease forwards;
     }
 
     @keyframes showMenu {

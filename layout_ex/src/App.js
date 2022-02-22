@@ -25,7 +25,6 @@ function App() {
         {/* Sidebar Component */}
         <Aside />
 
-        {/* Main Content start */}
         <main>
             <h1>Dashboard</h1>
             <div className="date">
@@ -35,16 +34,13 @@ function App() {
             {/* Insight Component */}
             <Insight />
 
-            {/* Data Table Component */}
+            {/* DataTable Component */}
             <DataTable />
 
-
         </main>
-        {/* Main Content end */}
-
-
+        
         <div className='right'>
-          {/* RightTop Component */}
+          {/* Top Component */}
           <Top />
 
           {/* RightDown Component */}

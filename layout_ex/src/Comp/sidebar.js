@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
-function Aside() {
-    let [selectMenu, c_selectMenu] = useState(0);
-    
-
+function Aside(props) {
 
     return (
         <aside>
@@ -26,7 +24,7 @@ function Aside() {
             </div>
 
             <div className="sidebar">
-                <a href="#" id="dashboard" onClick={() => {c_selectMenu(0)}}>
+                <Link to='/dashboard'> 
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path
@@ -35,8 +33,9 @@ function Aside() {
                         </svg>
                     </span>
                     <h3>Dashboard</h3>
-                </a>
-                <a href="#" id="customers" >
+                </Link>
+
+                <Link to='/user'> 
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path
@@ -46,23 +45,19 @@ function Aside() {
                             <circle cx="15.5" cy="12.5" r="1.5"></circle>
                         </svg>
                     </span>
-                    <h3>Customers</h3>
-                </a>
-                <a href="#" id="orders">
+                    <h3>User</h3>
+                </Link>
+
+                <Link to='/streaming'> 
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zm-2 9h-2v-4h2v4zM5 7a1.001 1.001 0 0 1 0-2h13v2H5z">
-                            </path>
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><circle cx="12" cy="10" r="3"></circle><path d="M18.125 2H5.875A1.877 1.877 0 0 0 4 3.875v12.25C4 17.159 4.841 18 5.875 18H11v2H7v2h10v-2h-4v-2h5.125A1.877 1.877 0 0 0 20 16.125V3.875A1.877 1.877 0 0 0 18.125 2zM12 15c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
                     </span>
-                    <h3>Orders</h3>
-                </a>
-                <a href="#" id="analytics">
+                    <h3>Streaming</h3>
+                </Link>
+
+                <Link to='/analytics'> 
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path
                                 d="M13 2.051V11h8.949c-.47-4.717-4.232-8.479-8.949-8.949zm4.969 17.953c2.189-1.637 3.694-4.14 3.98-7.004h-8.183l4.203 7.004z">
                             </path>
@@ -72,8 +67,9 @@ function Aside() {
                         </svg>
                     </span>
                     <h3>Analytics</h3>
-                </a>
-                <a href="#" id="messages">
+                </Link>
+
+                <Link to='/messages'>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         >
@@ -85,8 +81,9 @@ function Aside() {
                     </span>
                     <h3>Messages</h3>
                     <span className="message-count">22</span>
-                </a>
-                <a href="#" id="reports">
+                </Link>
+                
+                <Link to='/reports'>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         >
@@ -96,8 +93,8 @@ function Aside() {
                         </svg>
                     </span>
                     <h3>Reports</h3>
-                </a>
-                <a href="#" id="settings">
+                </Link>
+                <Link to='/settings'>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path
                             d="m2.344 15.271 2 3.46a1 1 0 0 0 1.366.365l1.396-.806c.58.457 1.221.832 1.895 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.598a8.094 8.094 0 0 0 1.895-1.112l1.396.806c.477.275 1.091.11 1.366-.365l2-3.46a1.004 1.004 0 0 0-.365-1.366l-1.372-.793a7.683 7.683 0 0 0-.002-2.224l1.372-.793c.476-.275.641-.89.365-1.366l-2-3.46a1 1 0 0 0-1.366-.365l-1.396.806A8.034 8.034 0 0 0 15 4.598V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.598A8.094 8.094 0 0 0 7.105 5.71L5.71 4.904a.999.999 0 0 0-1.366.365l-2 3.46a1.004 1.004 0 0 0 .365 1.366l1.372.793a7.683 7.683 0 0 0 0 2.224l-1.372.793c-.476.275-.641.89-.365 1.366zM12 8c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z">
@@ -105,7 +102,8 @@ function Aside() {
                     </svg>
                     </span>
                     <h3>Settings</h3>
-                </a>
+                </Link>
+                
                 <a href="#" id="logout">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

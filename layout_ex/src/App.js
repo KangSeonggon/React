@@ -59,6 +59,14 @@ function App() {
 
             <Route exact path='/streaming'>
               <h1>Streaming</h1>
+              <div className='streaming'>
+                <div>
+                  <h2>Test Point : -- facilities</h2>
+                  <div className='streamingItem'>
+                    
+                  </div>
+                </div>
+              </div>
             </Route>
 
             <Route exact path='/analytics'>

@@ -7,7 +7,7 @@ function Aside(props) {
         <aside>
             <div className='top'>
                 <div className="logo">
-
+                    
                 </div>
 
                 <div className='close' id='close-btn' onClick={() => {

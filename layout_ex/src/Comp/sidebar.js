@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import logo from '../svg/asi_favicon2.svg'
 
 function Aside(props) {
 
@@ -7,7 +8,8 @@ function Aside(props) {
         <aside>
             <div className='top'>
                 <div className="logo">
-                    
+                    <img src={logo}></img>
+                    <h2>AUTOSEMANTICS</h2>
                 </div>
 
                 <div className='close' id='close-btn' onClick={() => {

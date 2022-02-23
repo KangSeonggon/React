@@ -10,6 +10,8 @@ import DataTable from './Comp/dataTable';
 import Top from './Comp/Top';
 import RightDown from './Comp/rightDown';
 
+
+
 import './App.css';
 
 
@@ -60,13 +62,44 @@ function App() {
             <Route exact path='/streaming'>
               <h1>Streaming</h1>
               <div className='streaming'>
-                <div>
-                  <h2>Test Point : -- facilities</h2>
-                  <div className='streamingItem'>
+                <div className='streamingItem'>
+                  <h2>Test Site : Place 1</h2>
+                  <Link to='/streaming/detail'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zM10 7l6 5-6 5V7z"></path>
+                        </svg>
+                  </Link>
+                </div>
+                <div className='streamingItem'>
+                  <h2>Test Site : Place 2</h2>
+                  <Link to='/streaming/detail'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zM10 7l6 5-6 5V7z"></path>
+                        </svg>
+                  </Link>
+                </div>
+                <div className='streamingItem'>
+                  <h2>Test Site : Place 3</h2>
+                  <Link to='/streaming/detail'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zM10 7l6 5-6 5V7z"></path>
+                        </svg>
+                  </Link>
+                </div>
+
+                {/* <div>
+                  <h2>Test Point</h2>
+                  <div className='streamingDetail'>
                     
                   </div>
-                </div>
+                </div> */}
               </div>
+            </Route>
+
+            <Route path='/streaming/detail'>
+              <div>
+                  <h1>Test Point 1</h1>
+                  <div className='streamingDetail'>
+                    <h1 style={{textAlign:"center"}}>테스트입니다</h1>
+                  </div>
+                </div>
             </Route>
 
             <Route exact path='/analytics'>

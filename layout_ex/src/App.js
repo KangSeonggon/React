@@ -9,11 +9,12 @@ import Insight from './Comp/insight';
 import DataTable from './Comp/dataTable';
 import Top from './Comp/Top';
 import RightDown from './Comp/rightDown';
+// import HomeVisual from './Comp/homeVisual';
 
 
 
 import './App.css';
-
+import FirstHome from './Comp/firstHome';
 
 
 function App() {
@@ -22,20 +23,26 @@ function App() {
     <div className="App">
       
       <div className='body'>
+        <Switch>
+        <Route exact path='/'>
+          <FirstHome /></Route>
       <div className='container'>
+        
         {/* sidebar Component */}
         <Aside />
         
         <main>
-            <Route exact path='/'>
-              <h1>Home</h1>
-            </Route>
 
+            
+            
+            <Route exact path='/'>
+              
+            </Route>
             <Route exact path='/dashboard'>
               <h1>Dashboard</h1>
-              <div className="date">
+              {/* <div className="date">
                   <input type="date" />
-              </div>
+              </div> */}
               <Insight />
               <DataTable />
             </Route>
@@ -130,6 +137,7 @@ function App() {
         </div>
 
       </div>
+      </Switch>
       </div>
     </div>
 

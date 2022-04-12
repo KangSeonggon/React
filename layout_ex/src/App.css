@@ -148,7 +148,7 @@ aside {
 
 aside .top {
     background: var(--color-white);
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between;
     margin-top: 1.4rem;

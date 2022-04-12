@@ -28,7 +28,7 @@ function Top() {
             </div>
             <div className="profile">
                     <div className="info">
-                        <p>Hey, <b>Daniel</b></p>
+                        <p>Hey, <b>Gonn</b></p>
                         <small className="text-muted">Admin</small>
                     </div>
                     <div className="profile-photo">

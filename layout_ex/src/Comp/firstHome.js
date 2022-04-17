@@ -10,7 +10,7 @@ function FirstHome() {
                     <div className="faceprint"></div>
                 </Link>
                 <h3>
-                    Kang Seong GOn
+                    GONN
                 </h3>
             </div>
             

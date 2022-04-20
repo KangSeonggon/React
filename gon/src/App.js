@@ -32,10 +32,15 @@ function App() {
           <Route exact path={'/dashboard'}>
             <Dashboard />
           </Route>
+          <Route exact path={'/dashboard/food'}>
+            <Kakaomap />
+          </Route>
         
         <Route exact path={'/contact'}>
           <Contact />
         </Route>
+
+        
       </Switch>
 
       </div>

@@ -480,9 +480,13 @@ footer .container .socials a {
 }
 
 #map {
+  width: 100vw;
+  height: 100vh;
+}
+
+section .kakaomap {
+  display: grid;
   
-  width: 500px;
-  height: 500px;
 }
 
 

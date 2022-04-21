@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Route, Link, Switch, Routes } from 'react-router-dom';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";

@@ -13,11 +13,17 @@ function Home() {
             </div>
 
             <div className='info'>
-              <h1>React Web Developer</h1>
-              <h3>Hi, I'm Gonn</h3>
-              <p>People who succeed have momentum. The more they succeed, the more they want to succeed and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.</p>
+              <h1>Hi, I'm Gonn</h1>
+              <h3>Infographic</h3>
+              <div className="swiper">
+                <div className="swipe">1</div>
+                <div className="swipe">1</div>
+                <div className="swipe">1</div>
+                <div className="swipe">1</div>
+              </div>
+              {/* <p>People who succeed have momentum. The more they succeed, the more they want to succeed and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.</p>
               <p>-</p>
-              <p id='p2'>Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young. The greatest thing in life is to keep your mind young.</p>
+              <p id='p2'>Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young. The greatest thing in life is to keep your mind young.</p> */}
             </div>
             <div className='profile-area'>
               <div className='profile-box'></div>

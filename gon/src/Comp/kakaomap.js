@@ -83,7 +83,7 @@ for (var i = 0; i < positions.length; i ++) {
                         <li><Link>loca4</Link></li>
                     </ul>
                     <div className='location_list'>
-                        <div className='loca'>송계옥 | 서울 성동구 아차산로11길 11 </div>
+                        <div className='loca'>1</div>
                         <div className='loca'>1</div>
                         <div className='loca'>1</div>
                         <div className='loca'>1</div>

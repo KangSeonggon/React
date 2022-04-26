@@ -39,19 +39,16 @@ function Home() {
               </SwiperSlide>
                 
               <SwiperSlide>
-                <h1>Dashboard</h1>
-                <div className="info2">
+                
+                <div className="info">
+                  <h1>Dashboard</h1>
+                  <h3>Introduce my daily life</h3>
+                  <p>Food</p>
+                  <p>-</p>
+                  <p>News</p>
+                  <p>-</p>
+                  <p>Test</p>
                   
-                  <div className="info_list">
-                    <h3>Food</h3>
-                    <p></p>
-                  </div>
-                  <div className="info_list">
-                    <h3>NEWS</h3>
-                  </div>
-                  <div className="info_list">
-                    <h3>TEST</h3>
-                  </div>
                 </div>
                 
               </SwiperSlide>

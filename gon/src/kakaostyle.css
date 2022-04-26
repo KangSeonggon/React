@@ -1,0 +1,21 @@
+
+:root {
+    --color-white : #fff;
+    --color-light : #f4f4f4;
+    --color-light2 : #fafafa;
+    --color-dark : #525252;
+    --color-black : #141415;
+    --color-primary : #b3d47c;
+    --color-primary-light : rgba(132, 241, 43, 0.12);
+    --color-success : #29f5a6;
+    --color-warning : #ffce31;
+  
+    --transition : all 300ms ease;
+  }
+
+.overlaybox {
+    width: 150px;
+    height: 100px;
+    background: var(--color-dark);
+    color:var(--color-white);
+}

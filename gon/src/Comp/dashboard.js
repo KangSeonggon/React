@@ -4,36 +4,63 @@ import food from '../cooking.png'
 import rocket from '../rocket.png'
 import owl from '../owl.png'
 import { Route, Link, Switch, Routes } from 'react-router-dom';
+import { BsFillMusicPlayerFill, BsNewspaper } from 'react-icons/bs';
+import { MdFastfood } from 'react-icons/md';
+import { ImNewspaper } from 'react-icons/im';
+import { FaCat, FaHandMiddleFinger, FaNewspaper } from "react-icons/fa";
+
 
 
 function Dashboard() {
     return(
         <section className="dashboard" id="dashboards">
-            <h1>DASHBOARD</h1>
+            
+            <div className='overlay'>
+            <h1>Dashboard</h1>
+            <p id="p">Lifestyle</p>
             <div className="container">
+                
                 <Link to='/dashboard/food'>
                 <div className="dash">
-                    <span><img id="food" src={food}></img></span>
+                    <span><MdFastfood id="food" /></span>
                     <h3>Food</h3>
                     <p>다녀 온 맛집을 소개해요</p>
+                    <p>지도와 짧은 리뷰</p>
+                    <p>사진도 있음ㅋ</p>
                 </div>
                 </Link>
                
                 <Link to='/dashboard/news'>
                 <div className="dash">
-                    <span><img id="rocket" src={rocket}></img></span>
+                    <span><ImNewspaper id="food" /></span>
                     <h3>News</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <p>etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
                 </div>
                 </Link>
 
-                <Link to='/dashboard/test'>
+                <Link to='/dashboard/music'>
                 <div className="dash">
-                    <span><img id="owl" src={owl}></img></span>
-                    <h3>Test</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <span><BsFillMusicPlayerFill id='food' /></span>
+                    <h3>Music</h3>
+                    <p>etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
                 </div>
                 </Link>
+                <Link to='/dashboard/test'>
+                <div className="dash">
+                    <span><FaCat id='food' /></span>
+                    <h3>Test</h3>
+                    <p>etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+                </div>
+                </Link>
+                <Link to='/dashboard/test'>
+                <div className="dash">
+                    <span><FaHandMiddleFinger id='food' /></span>
+                    <h3>Test</h3>
+                                        <p>etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+                </div>
+                </Link>
+                
+            </div>
             </div>
         </section>
        

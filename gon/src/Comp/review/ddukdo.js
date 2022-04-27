@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import {IoMdArrowRoundBack} from 'react-icons/io'
+
 function Ddukdo(props) {
    return(
     <div className='photoModal'>

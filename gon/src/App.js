@@ -13,6 +13,8 @@ import Home from './Comp/home';
 import Nav from './Comp/navigation';
 import Footer from './Comp/footer';
 import Dashboard from './Comp/dashboard';
+import Portfolio from './Comp/portfolio';
+import Archive from './Comp/archive';
 
 
 function App() {
@@ -41,6 +43,13 @@ function App() {
           <Contact />
         </Route>
 
+        <Route exact path={'/portfolio'}>
+          <Portfolio />
+        </Route>
+
+        <Route exact path={'/archive'}>
+          <Archive />
+        </Route>
         
       </Switch>
 

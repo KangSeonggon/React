@@ -385,7 +385,7 @@ function Kakaomap(){
                             return(
                                 <li><Link to='/dashboard/food' onClick={()=>
                                     {c_location(data);
-                                }}>{data.description[0]} | {data.description[1]} | {data.description[2]}</Link> <BsFillCameraFill onClick={()=> { c_photoModal(data.description[1])}} /> </li>
+                                }}>{data.description[0]} | {data.description[1]} | {data.description[2]}</Link> <span><BsFillCameraFill onClick={()=> { c_photoModal(data.description[1])}} /> </span></li>
                             )
                         })}
                     </div>

@@ -2,10 +2,10 @@
 import React from 'react';
 import {IoMdArrowRoundBack} from 'react-icons/io'
 
-function Whygo() {
+function Whygo(props) {
    return(
     <div className='photoModal'>
-    <IoMdArrowRoundBack onClick={() => { c_photoModal('') }} />
+    <IoMdArrowRoundBack onClick={() => { props.c_photoModal('') }} />
     <h2>Review</h2>
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor

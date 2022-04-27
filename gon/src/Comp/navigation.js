@@ -3,8 +3,11 @@ import { Route, Link, Switch, Routes } from 'react-router-dom';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
+
 function Nav() {
     let [menu, c_menu] = useState('');
+
+
   
     return(
         <nav>
@@ -14,9 +17,8 @@ function Nav() {
             </Link>
             <ul>
               <li><Link id='home' to='/'  onClick={()=> {c_menu('home')}} >HOME</Link></li>
-              <li><Link id='news' to='/dashboard' onClick={()=> {c_menu('dashboard')}} >DASHBOARD</Link></li>
-              <li><Link id='skills' to='/project' onClick={()=> {c_menu('project')}} >PROJECT</Link></li>
-              <li><Link id='services' to='/services' onClick={()=> {c_menu('services')}}  >SERVICES</Link></li>
+              <li><Link id='dashboard' to='/dashboard' onClick={()=> {c_menu('dashboard')}} >DASHBOARD</Link></li>
+              <li><Link id='project' to='/archive' onClick={()=> {c_menu('archive')}} >ARCHIVE</Link></li>
               <li><Link id='portfolio' to='/portfolio' onClick={()=> {c_menu('portfolio')}} >PORTFOLIO</Link></li>
               <li><Link id='contact' to='/contact' onClick={()=> {c_menu('contact')}} >CONTACT</Link></li>
             </ul>

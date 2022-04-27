@@ -758,6 +758,11 @@ section.archive .overlay h1 {
 
 section.archive .overlay .nav {
   background: var(--color-light);
+  border : 1px solid var(--color-primary);
+}
+section.archive .overlay .nav h1{
+  border-bottom: 1px solid var(--color-gray);
+  margin: 0 1rem 0;
 }
 section.archive .overlay .navlist {
   margin: 2rem;

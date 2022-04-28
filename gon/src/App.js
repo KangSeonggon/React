@@ -43,7 +43,7 @@ function App() {
           <Contact />
         </Route>
 
-        <Route exact path={'/portfolio'}>
+        <Route exact path={'/resume'}>
           <Portfolio />
         </Route>
 

@@ -1,8 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import food from '../cooking.png'
-import rocket from '../rocket.png'
-import owl from '../owl.png'
 import { Route, Link, Switch, Routes } from 'react-router-dom';
 import { BsFillMusicPlayerFill, BsNewspaper } from 'react-icons/bs';
 import { MdFastfood } from 'react-icons/md';

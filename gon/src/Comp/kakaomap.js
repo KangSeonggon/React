@@ -19,6 +19,9 @@ import Songgye from './review/songgye';
 import Songhwa from './review/songhwa';
 import Spaka from './review/spaka';
 import Whygo from './review/whygo';
+import Mexicali from './review/mexicali';
+import Hayeon from './review/hayeon';
+import Igyeong from './review/igyeong';
 
 
 function Kakaomap(){
@@ -68,13 +71,6 @@ function Kakaomap(){
         description: ['성동','외가집','서울 성동구 연무장길 17', '37.543706600475176', '127.05141790677251',['Pork']],
         review : <Whygo photoModal={photoModal} c_photoModal={c_photoModal}  />
 
-    },
-    {
-        title: '뚝도농원', 
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">뚝도농원</div>', 
-        latlng: new kakao.maps.LatLng(37.54512711388241, 127.05325203784035),
-        description: ['성동','뚝도농원','서울 성동구 아차산로 82', '37.54512711388241', '127.05325203784035',['Duck']],
-        review : <Ddukdo photoModal={photoModal} c_photoModal={c_photoModal}  />
     },
     {
         title: '마블상회',
@@ -129,9 +125,31 @@ function Kakaomap(){
         title: '소바쿠',
         content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">소바쿠</div>', 
         latlng: new kakao.maps.LatLng(37.5527, 127.0888),
-        description: ['광진','소바쿠','서울 광진구 천호대로 650','37.5527','127.0888',['Else']],
+        description: ['광진','소바쿠','서울 광진구 천호대로 650','37.5527','127.0888',['Noodle']],
         review : <Sobaku photoModal={photoModal} c_photoModal={c_photoModal}  />
+    },
+    {
+        title: '멕시칼리',
+        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">멕시칼리</div>', 
+        latlng: new kakao.maps.LatLng(37.5527, 127.0884),
+        description: ['광진','멕시칼리','서울특별시 광진구 능동로36길 181','37.5527','127.0884',['Pork','Beef','Fish','Else']],
+        review : <Mexicali photoModal={photoModal} c_photoModal={c_photoModal}  />
+    },
+    {
+        title: '하연옥',
+        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
+        latlng: new kakao.maps.LatLng(35.194, 128.0607),
+        description: ['진주','하연옥','서울특별시 광진구 능동로36길 181','35.194','128.0607',['Noodle']],
+        review : <Hayeon photoModal={photoModal} c_photoModal={c_photoModal}  />
+    },
+    {
+        title: '이경문',
+        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
+        latlng: new kakao.maps.LatLng(37.5731, 126.9908),
+        description: ['종로','이경문 순대곱창','서울특별시 광진구 능동로36길 181','37.5731','126.9908',['Pork','Else']],
+        review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
     }
+    
 
     ]);
     let [copy_positions, c_copy_positions] = useState([...positions]);
@@ -365,9 +383,9 @@ function Kakaomap(){
                 {/* <BiArrowBack /> */}
                     <ul>
                         <li id='location_total'><h3><Link to='/dashboard/food' onClick={()=>{ c_totalloca(!totalloca) }}>TOTAL</Link></h3></li>
-                        {foodcate.map(function(data){
+                        {foodcate.map(function(data,i){
                             return(
-                            <li><Link to='/dashboard/food' onClick={() => {c_foodcategory(data);}}>{data}</Link></li>)
+                            <li><Link to='/dashboard/food' key={i} onClick={() => {c_foodcategory(data);}}>{data}</Link></li>)
                         })}
                         
                     </ul>
@@ -375,22 +393,23 @@ function Kakaomap(){
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('광진'); }} >광진</Link></li>                           
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('성동'); }} >성동</Link></li>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >강남</Link></li>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >부산</Link></li>
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('종로'); }} >종로</Link></li>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >어딘가</Link></li>
 
                     </div>
                     <div className='location_list'>
                         
                         {copy_positions.map(function(data){
+                            // console.log(data.title)
                             return(
-                                <li><Link to='/dashboard/food' onClick={()=>
+                                <li><Link to='/dashboard/food' key={data.title} onClick={()=>
                                     {c_location(data);
                                 }}>{data.description[0]} | {data.description[1]} | {data.description[2]}</Link> <span><BsFillCameraFill onClick={()=> { c_photoModal(data.description[1])}} /> </span></li>
                             )
                         })}
                     </div>
                     {positions.map(function(data){
-                        console.log(data.review)
+                        // console.log(data.review)
                         return(
                             <>
                             {

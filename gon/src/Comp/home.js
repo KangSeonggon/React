@@ -2,6 +2,7 @@ import React from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import {Link} from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -21,6 +22,7 @@ function Home() {
               <a href='https://github.com/KangSeonggon' target='_blank'><AiFillGithub /></a>
               <a href='https://www.linkedin.com/in/seonggon-kang-6a7b91237/' target='_blank'><AiFillLinkedin /></a>
             </div>
+            
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={50}
@@ -43,11 +45,11 @@ function Home() {
                 <div className="info">
                   <h1>Dashboard</h1>
                   <h3>Introduce my daily life</h3>
-                  <p>Food</p>
-                  <p>-</p>
-                  <p>News</p>
-                  <p>-</p>
-                  <p>Test</p>
+                  <div className="swipeBox">
+                    <Link className="swipeBoxlist" to='/dashboard/food'><h4>Food</h4></Link>
+                    <Link className="swipeBoxlist" to='/dashboard/news'><h4>News</h4></Link>
+                    <Link className="swipeBoxlist" to='/dashboard/music'><h4>Music</h4></Link>
+                  </div>
                   
                 </div>
                 

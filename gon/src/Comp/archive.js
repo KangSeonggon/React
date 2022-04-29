@@ -40,7 +40,7 @@ function Archive() {
             id : 5,
             title:'퇴근시켜줘',
             date: ['2021.10.3','09:01'],
-            content:'나 왜 회사? 퇴근 시켜.......Read More'
+            content:'나 왜 회사? 퇴근 시켜줘.......Read More'
         }
     ]);
 

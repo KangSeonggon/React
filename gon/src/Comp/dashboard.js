@@ -27,10 +27,10 @@ function Dashboard() {
                 </div>
                 </Link>
                
-                <Link to='/dashboard/news'>
+                <Link to='/dashboard/basketball'>
                 <div className="dash">
                     <span><ImNewspaper id="food" /></span>
-                    <h3>News</h3>
+                    <h3>Basketball</h3>
                     <p>etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
                 </div>
                 </Link>

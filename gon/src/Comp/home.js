@@ -47,7 +47,7 @@ function Home() {
                   <h3>Introduce my daily life</h3>
                   <div className="swipeBox">
                     <Link className="swipeBoxlist" to='/dashboard/food'><h4>Food</h4></Link>
-                    <Link className="swipeBoxlist" to='/dashboard/news'><h4>News</h4></Link>
+                    <Link className="swipeBoxlist" to='/dashboard/basketball'><h4>Basketball</h4></Link>
                     <Link className="swipeBoxlist" to='/dashboard/music'><h4>Music</h4></Link>
                   </div>
                   

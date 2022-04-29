@@ -21,8 +21,6 @@ function Songhwa(props) {
             <img src={p2}/>
             <img src={p3}/>
             <img src={p4}/>
-            
-
         </div>
     </div>
        

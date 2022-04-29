@@ -53,7 +53,7 @@ html {
 .body {
   width: 100%;
   min-height: 100vh;
-  position:relative;
+  position: relative;
   justify-content: space-between;
   background : var(--color-white);
   color: var(--color-black);
@@ -98,7 +98,6 @@ section {
   padding: 0rem 0 0rem;
   max-width: 100vw;
   overflow-x: hidden;
-  
 }
 
 section h1 {
@@ -376,153 +375,7 @@ section.contact form .btn:hover {
 }
 
 
-/* media */
 
-/* media phone */
-
-@media screen and (max-width:1050px) {
-  img {
-    display: none;
-  }
-  section.landing .container {
-    margin-top: 5rem;
-    grid-template-columns: 3rem auto;
-  }
-}
-
-@media screen and (max-width:600px) {
-  img {
-    display: block;
-  }
-
-  .body {
-    width: 100%;
-    overflow: hidden;
-    grid-template-columns: 7rem auto 13rem;
-  }
-
-  
-  h1 {
-    font-size: 2.2rem;
-  }
-  h2 {
-    font-size: 1.6rem;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  h4 {
-    font-size: 1rem;
-  }
-  h5 {
-    font-size: 0.65rem;
-  }
-
-  
-  /* nav bar */
-  nav {
-    box-sizing: 0 1rem 1rem rgb(0,0,0,0.1);
-  }
-  nav.show-box-shadow {
-    box-shadow: 0 0.6rem 1rem var(--color-primary-light);
-    border: none;
-  }
-
-  nav h2 {
-    margin-left: 1rem;
-  }
-  nav .container {
-    width: 100%;
-  }
-  nav .container ul {
-    position: fixed;
-    top: 0;
-    flex-direction: column;
-    z-index: 3;
-    width: 16rem;
-    height: 100vh;
-    background: var(--color-white);
-    box-shadow: 1rem 0 2rem var(--color-primary-light);
-    display: none;
-    }
-
-  nav ul li {
-    height: 4.6rem;
-    width: 100%;
-  }
-
-  nav .container ul li a {
-    width: 100%;
-    justify-content: start;
-    padding-left: 2rem;
-  }
-  nav .container ul li a:hover {
-    padding-left: 3rem;
-  }
-  nav button {
-    display: inline-block;
-    cursor: pointer;
-    background: transparent;
-    color: var(--color-black);
-    margin-right: 1rem;
-  }
-  nav button#close-btn {
-    display: none;
-  }
-  /* body */
-  .body {
-    overflow-x: hidden;
-  }
-
-  /* section */
-  section.landing {
-    margin-top: 2rem; 
-    padding-bottom: auto;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  section.landing .container {
-
-    grid-template-columns: 1fr;
-    grid-template-rows: -1%;
-    text-align: center;
-    row-gap: 1rem;
-  }
-  section.landing .container .socials {
-    display: none;
-  }
-  section.landing .container .info {
-    width: 100%;
-    margin: 0 auto;
-  }
-  section.landing .container .info h1 {
-    text-align: center;
-  }
-  section.landing .container .info p {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  section.landing .container .profile-area {
-    grid-row: 1;
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  section.landing .swiper h1 {
-    text-align: center;
-    margin: 0;
-  }
-
-  section.landing .swiper {
-    overflow: hidden;
-    background: var(--color-white);
-    min-height: 10%;
-    width: 90%;
-  }
-  
-}
 
 
 /* footer */
@@ -568,21 +421,28 @@ footer .container .socials a {
 
 
 /* kakaomap */
-#map {
-  width: 50vw;
-  height: 100vh;
-}
+
 
 
 section.kakao {
   display: flex;
 }
 
+section.kakao .kakaomap {
+  width: 50vw;
+  position:static;
+}
+
+
+
 section.kakao .foodlist {
+  overflow-y: scroll;
   padding-top: 5rem;
   width: 50vw;
   height: 100vh;
+  padding-bottom: 10rem;
 }
+
 
 section.kakao .location {
   text-align: center;
@@ -904,4 +764,176 @@ section.archive .overlay .boardcontent .content a{
 
 section.archive .overlay .boardcontent .content a:hover {
   color: var(--color-primary);
+}
+
+
+
+
+
+
+/* media */
+
+/* media phone */
+
+@media screen and (max-width:1050px) {
+  img {
+    display: none;
+  }
+  section.landing .container {
+    margin-top: 5rem;
+    grid-template-columns: 3rem auto;
+  }
+  
+}
+
+@media screen and (max-width:600px) {
+
+
+  img {
+    display: block;
+  }
+
+  .body {
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 7rem auto 13rem;
+  }
+
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.65rem;
+  }
+
+  
+  /* nav bar */
+  nav {
+    box-sizing: 0 1rem 1rem rgb(0,0,0,0.1);
+  }
+  nav.show-box-shadow {
+    box-shadow: 0 0.6rem 1rem var(--color-primary-light);
+    border: none;
+  }
+
+  nav h2 {
+    margin-left: 1rem;
+  }
+  nav .container {
+    width: 100%;
+  }
+  nav .container ul {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    z-index: 3;
+    width: 16rem;
+    height: 100vh;
+    background: var(--color-white);
+    box-shadow: 1rem 0 2rem var(--color-primary-light);
+    display: none;
+    }
+
+  nav ul li {
+    height: 4.6rem;
+    width: 100%;
+  }
+
+  nav .container ul li a {
+    width: 100%;
+    justify-content: start;
+    padding-left: 2rem;
+  }
+  nav .container ul li a:hover {
+    padding-left: 3rem;
+  }
+  nav button {
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-black);
+    margin-right: 1rem;
+  }
+  nav button#close-btn {
+    display: none;
+  }
+  /* body */
+  .body {
+    overflow-x: hidden;
+  }
+
+  /* section */
+  section.landing {
+    margin-top: 2rem; 
+    padding-bottom: auto;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  section.landing .container {
+
+    grid-template-columns: 1fr;
+    grid-template-rows: -1%;
+    text-align: center;
+    row-gap: 1rem;
+  }
+  section.landing .container .socials {
+    display: none;
+  }
+  section.landing .container .info {
+    width: 100%;
+    margin: 0 auto;
+  }
+  section.landing .container .info h1 {
+    text-align: center;
+  }
+  section.landing .container .info p {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  section.landing .container .profile-area {
+    grid-row: 1;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  section.landing .swiper h1 {
+    text-align: center;
+    margin: 0;
+  }
+
+  section.landing .swiper {
+    overflow: hidden;
+    background: var(--color-white);
+    min-height: 10%;
+    width: 90%;
+  }
+
+  section.kakao {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  section.kakao .kakaomap {
+    width: 100vw;
+    height: 50vh;
+  }
+  section.kakao .foodlist {
+    padding-top: 0;
+    width: 100vw;
+    height: 50vh;
+  }
+
 }

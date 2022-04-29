@@ -2,10 +2,12 @@
 import React, { useEffect , useState } from 'react'
 import { Route, Link, useHistory, useParams } from 'react-router-dom';
 
-import {BiArrowBack} from 'react-icons/bi'
+import {AiFillStar} from 'react-icons/ai'
 import {IoMdArrowRoundBack} from 'react-icons/io'
 import {BsFillCameraFill} from 'react-icons/bs'
 import { __RouterContext } from 'react-router';
+
+import p1 from './review/img/chunmichun/chunmichun1.jpg'
 
 
 import Chunmi from './review/chunmichun'
@@ -30,15 +32,6 @@ function Kakaomap(){
     
     // not used
     let history = useHistory();
-    let [foodlist, c_foodlist] = useState([
-        ['성수','송계옥','서울 성동구 아차산로11길 11','37.5447', '127.0593'],
-        ['성수','외가집','서울 성동구 연무장길 17', '37.543706600475176', '127.05141790677251'],
-        ['성수','뚝도농원','서울 성동구 아차산로 82', '37.54512711388241', '127.05325203784035'],
-        ['성수','마블상회','서울 성동구 연무장7길 7','37.543321','127.054396'],
-        ['건대','송화산시도삭면','서울 광진구 아차산로30길 33','37.5392','127.0672'],
-        ['군자','오징어 상미수산','서울특별시 광진구 군자동 면목로 34','37.557','127.0766']
-    ]);
-
     let [photoModal, c_photoModal] = useState('');
 
 
@@ -139,14 +132,21 @@ function Kakaomap(){
         title: '하연옥',
         content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
         latlng: new kakao.maps.LatLng(35.194, 128.0607),
-        description: ['진주','하연옥','서울특별시 광진구 능동로36길 181','35.194','128.0607',['Noodle']],
+        description: ['진주','하연옥','경상남도 진주시 진주대로 1317-20','35.194','128.0607',['Noodle']],
         review : <Hayeon photoModal={photoModal} c_photoModal={c_photoModal}  />
     },
     {
         title: '이경문',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
+        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">이경문 순대곱창</div>', 
         latlng: new kakao.maps.LatLng(37.5731, 126.9908),
         description: ['종로','이경문 순대곱창','서울특별시 광진구 능동로36길 181','37.5731','126.9908',['Pork','Else']],
+        review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
+    },
+    {
+        title: '신발원',
+        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">신발원</div>', 
+        latlng: new kakao.maps.LatLng(35.1148, 129.0387),
+        description: ['부산','신발원','부산광역시 동구 대영로243번길 62','35.1148','129.0387',['Dimsum']],
         review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
     }
     
@@ -168,12 +168,22 @@ function Kakaomap(){
             // console.log('pass')
         }
         else {
-            for (var i = 0; i < positions.length; i ++) {
-                if (positions[i].description[0].includes(location2) == true) {
-                    let sortCategory = positions[i]
-                    arr.push(sortCategory);
+            if (location2 == '어딘가') {
+                for (var i = 0; i < positions.length; i ++) {
+                    if ((['부산','진주']).includes(positions[i].description[0]) == true) {
+                        let sortCategory = positions[i]
+                        arr.push(sortCategory);
+                    }
+                }
+            } else {
+                for (var i = 0; i < positions.length; i ++) {
+                    if (positions[i].description[0].includes(location2) == true) {
+                        let sortCategory = positions[i]
+                        arr.push(sortCategory);
+                    }
                 }
             }
+            
             // 최종 정렬된 음식점
             c_copy_positions(arr);
             // console.log(arr);
@@ -213,7 +223,8 @@ function Kakaomap(){
                         infowindow.close();
                     };
                 }
-                c_location('start');
+                c_location2('start');
+                c_foodcategory('start');
                 
     
 
@@ -224,7 +235,6 @@ function Kakaomap(){
 
     // 음식 카테고리
     useEffect(() => {
-
         let arr = []
         if (foodcategory == 'start') {
             // console.log('pass')
@@ -236,22 +246,8 @@ function Kakaomap(){
                     arr.push(sortCategory);
                 }
             }
-            // if (location2 == 'start') {
-            //     // console.log('pass')
-            // } else {
-            //     let arr2 = []
-            //     for (var i = 0; i < arr.length; i ++) {
-            //         if (arr[i].description == location2) {
-            //             arr2.push(arr[i])
-            //         }
-            //     }
-            //     console.log(arr2)
-            // }
-
             // 최종 정렬된 음식점
             c_copy_positions(arr);
-            // console.log(arr);
-
 
             var mapContainer = document.getElementById('map'),
                 mapOption = {
@@ -286,12 +282,11 @@ function Kakaomap(){
                     return function() {
                         infowindow.close();
                     };
+                    
                 }
-                c_location('start');
-                
-    
-
+                     
         }
+        
     },[foodcategory])
     
     // 음식점 클릭시 이벤트
@@ -324,13 +319,15 @@ function Kakaomap(){
         });
 
         infowindow.open(map, marker);}
+        c_location2('start');
+        c_foodcategory('start');
 
 
     },[location]);
 
     // 전체지도
     useEffect(()=>{
-        c_foodcategory('start');
+        
         c_copy_positions([...positions]);
         var mapContainer = document.getElementById('map'),
         mapOption = { 
@@ -371,6 +368,7 @@ function Kakaomap(){
                 };
             }
             c_location('start');
+            c_foodcategory('start');
 
             }, [totalloca])
  
@@ -392,13 +390,13 @@ function Kakaomap(){
                     <div className='location_sort'>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('광진'); }} >광진</Link></li>                           
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('성동'); }} >성동</Link></li>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >강남</Link></li>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('종로'); }} >종로</Link></li>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >어딘가</Link></li>
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >강남</Link></li>
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('마포'); }} >마포</Link></li>
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('어딘가'); }} >어딘가</Link></li>
 
                     </div>
                     <div className='location_list'>
-                        
                         {copy_positions.map(function(data){
                             // console.log(data.title)
                             return(
@@ -413,7 +411,7 @@ function Kakaomap(){
                         return(
                             <>
                             {
-                                photoModal == data.description[1]
+                                photoModal === data.description[1]
                                 ? data.review
                                 : null
                             }

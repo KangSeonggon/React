@@ -55,9 +55,9 @@ function Home() {
                 
               </SwiperSlide>
 
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <div className="info_portfolio"></div>
-              </SwiperSlide>
+              </SwiperSlide> */}
               
             </Swiper>
 

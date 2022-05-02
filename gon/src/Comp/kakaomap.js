@@ -24,6 +24,7 @@ import Whygo from './review/whygo';
 import Mexicali from './review/mexicali';
 import Hayeon from './review/hayeon';
 import Igyeong from './review/igyeong';
+import Sinbal from './review/sinbal';
 
 
 function Kakaomap(){
@@ -147,7 +148,7 @@ function Kakaomap(){
         content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">신발원</div>', 
         latlng: new kakao.maps.LatLng(35.1148, 129.0387),
         description: ['부산','신발원','부산광역시 동구 대영로243번길 62','35.1148','129.0387',['Dimsum']],
-        review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
+        review : <Sinbal photoModal={photoModal} c_photoModal={c_photoModal}  />
     }
     
 

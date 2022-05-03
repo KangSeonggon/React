@@ -9,10 +9,10 @@ function Igyeong(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack  id='gobackSvg' onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>지금까지 두 번 먹었는데, 보통 한 시간씩 기다려서 입장. 들어갈때 냄새가 좀 나는 것 같으면서도?
+            음식에서 돼지 비린내는 거의 안나는 편에 속함(개인적). 소주 안주.
+        </p>
+        <p>아무것도 안 먹고 주문도 안하고 몇 시간째 수다만 떨던 못생긴 언냐들 죽여버릴 뻔.</p>
         <div className='photo'>
             <img src={p1}></img>
         </div>

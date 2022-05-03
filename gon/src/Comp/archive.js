@@ -9,26 +9,28 @@ import { useSwiperSlide } from 'swiper/react';
 function Archive() {
     
     let [title, c_title] = useState('GuestBook');
+
     let [title_sort,c_title_sort] = useState([
         {
             title: 'GuestBook',
-            sort: ['All','Ascending','Descending']
+            sortcate: ['All','Ascending','Descending']
         },
         {
             title: 'Programming',
-            sort: ['All','Frontend','Backend','Embedded']
+            sortcate: ['All','Frontend','Backend','Embedded']
         },
         {
             title: 'Test',
-            sort: ['All']
+            sortcate: ['All']
         },
         {
             title: 'Etc',
-            sort: ['All']
+            sortcate: ['All']
         }
     ]    
     );
-    let [sortdata, c_sortdata] = useState([]);
+
+    let [sortdata2, c_sortdata2] = useState(['All','Ascending','Descending']);
     
 
     let [contentModal, c_contentModal] = useState([1,2,3,4,5]);
@@ -70,6 +72,14 @@ function Archive() {
             content:'나 왜 회사? 퇴근 시켜줘.......Read More'
         }
     ]);
+    
+
+    // 사이드 메뉴 바꾸느라 헤맴
+    useEffect(()=>{
+        let sortdata = title_sort.find(function(data){
+            return data.title == title});
+            c_sortdata2(sortdata.sortcate);
+    },[title])
 
    return(
 
@@ -79,7 +89,7 @@ function Archive() {
                         <h1>Archive</h1>
                         {/* <IoMdArrowRoundBack id="back" /> */}
                         <div className='navlist'>
-                            <li><Link to='/archive' onClick={()=>{c_title('GuestBook')}}>GuestBook</Link></li>
+                            <li><Link to='/archive' onClick={()=>{c_title('GuestBook');}}>GuestBook</Link></li>
                             <li><Link to='/archive' onClick={()=>{c_title('Programming')}}>Programming</Link></li>
                             <li><Link to='/archive' onClick={()=>{c_title('Test')}}>Test</Link></li>
                             <li><Link to='/archive' onClick={()=>{c_title('Etc')}}>Etc</Link></li>
@@ -93,24 +103,12 @@ function Archive() {
                         <div className='boardcontent'>
                             <div className='boardcontentCate'>
                                 <div className='catelist'>
-                                    
-
-
                                     {
-                                        title_sort.map(function(data) {
-                                            if (title === data.title){
-                                                c_sortdata(data.sort);
-                                            }
-                                            
-                                            // sortdata.map(function(data){
-                                            //     return(
-                                            //         <li><Link to='/archive'>{data}</Link></li>
-                                            //     )
-                                            // })
-                                        }
-                                        
-
-                                        )
+                                        sortdata2.map(function(data){
+                                            return(
+                                                <li><Link to='/archive'>{data}</Link></li>
+                                            )
+                                        })
                                     }
 
                                     {/* <li><Link to='/archive'>All</Link></li>

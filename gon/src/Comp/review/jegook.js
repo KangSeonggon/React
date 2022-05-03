@@ -11,10 +11,8 @@ function Jegook(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>과거, 가격도 비싸지 않고 고기질이 좋아 자주 갔었음. 개인적으로 된장찌개, 육회, 안심 존맛. 와사비가 없다면 따로 달라하자.</p>
+        <p>현재, 가격을 생각보다 많이 올림. 받은 접시기준 고기질이 안 좋아보일때도 가끔</p>
         <div className='photo'>
             <img src={p4}></img>
             <img src={p3}></img>

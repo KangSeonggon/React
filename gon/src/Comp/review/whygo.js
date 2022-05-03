@@ -11,10 +11,10 @@ function Whygo(props) {
     <div className='photoModal'>
     <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
     <h2>Review</h2>
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <p>진짜 자주 가는 돼지고기집, 삼겹살보다 갈매기살이 진리. 돼지 껍데기도 존맛</p>
+    <p>사이드 메뉴는 아쉬움</p> 
+    
+    
     <div className='photo'>
         <img src={p2}></img>
         <img src={p3}></img>

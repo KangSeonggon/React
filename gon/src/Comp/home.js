@@ -33,7 +33,7 @@ function Home() {
               <SwiperSlide>
                 <div className='info'>
                   <h1>React Web Developer</h1>
-                  <h3>Hi I'm Gonn</h3>
+                  <h3>Hello friends, I'm Gonn</h3>
                   <p>People who succeed have momentum. The more they succeed, the more they want to succeed and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.</p>
                   <p>-</p>
                   <p id='p2'>Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young. The greatest thing in life is to keep your mind young.</p>
@@ -43,13 +43,17 @@ function Home() {
               <SwiperSlide>
                 
                 <div className="info">
-                  <h1>Dashboard</h1>
-                  <h3>Introduce my daily life</h3>
-                  <div className="swipeBox">
+                  <h1>Introduce Daily-Life</h1>
+                  <h3>Food, sports ...</h3>
+                  <p>Restaurant</p>
+                  <p>다녀온 맛집을 소개해요. 지도와 짧은 리뷰, 사진도 있음ㅋ</p>
+                  <p>Basketball</p>
+                  <p>(제작중)농구 좋아하는데 이것도 일상 탭 만들어서 올릴거임</p>
+                  {/* <div className="swipeBox">
                     <Link className="swipeBoxlist" to='/dashboard/food'><h4>Food</h4></Link>
                     <Link className="swipeBoxlist" to='/dashboard/basketball'><h4>Basketball</h4></Link>
                     <Link className="swipeBoxlist" to='/dashboard/music'><h4>Music</h4></Link>
-                  </div>
+                  </div> */}
                   
                 </div>
                 

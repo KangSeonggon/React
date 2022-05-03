@@ -10,10 +10,8 @@ function Hayeon(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>육전이 존맛이었음. 냉면은 지인들 기준 매우 짰다고 함. 본인 짠 걸 좋아해서 나름 맛있게 먹었음.</p>
+        <p>뭐 특별한 건 없음</p>
         <div className='photo'>
             <img src={p1}></img>
             <img src={p2}></img>

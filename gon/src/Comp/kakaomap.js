@@ -2,17 +2,13 @@
 import React, { useEffect , useState } from 'react'
 import { Route, Link, useHistory, useParams } from 'react-router-dom';
 
-import {AiFillStar} from 'react-icons/ai'
-import {IoMdArrowRoundBack} from 'react-icons/io'
 import {BsFillCameraFill} from 'react-icons/bs'
 import { __RouterContext } from 'react-router';
 
-import p1 from './review/img/chunmichun/chunmichun1.jpg'
 
 
 import Chunmi from './review/chunmichun'
 import Daemye from './review/daemyeong';
-import Ddukdo from './review/ddukdo';
 import Jegook from './review/jegook';
 import Mable from './review/mable';
 import Sangmi from './review/sangmi';

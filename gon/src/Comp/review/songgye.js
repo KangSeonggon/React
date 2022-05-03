@@ -10,10 +10,10 @@ function Songgye(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>양이 많진 않지만 깔끔하니 맛있음, 다 구워줌. 사실 특별한 장점을 찾기는 조금 그럼;
+            하지만 모든 메뉴 다 평타이상, 좋은 분위기, 다양한 소스 굳
+        </p>
+        <p>대기가 너무 김</p>
         <div className='photo'>
             <img src={p1}></img>
             <img src={p2}></img>

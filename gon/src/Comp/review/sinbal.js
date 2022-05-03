@@ -10,10 +10,10 @@ function Sinbal(props) {
        <div className='photoModal'>
            <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
            <h2>Review</h2>
-           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-               in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-               sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+           <p>만두를 먹을때면 건대 송화산시도삭면이 생각남..부산 신발원도 물론 유명하고 나름 괜찮지만
+               도삭면집을 따라올 순 없음.
+           </p>
+           <p>어쨌든 제일 맛있었던 건 새우교자.</p>
 
            <div className='photo'>
                <img src={p1}></img>

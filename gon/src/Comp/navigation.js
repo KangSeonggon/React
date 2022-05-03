@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 
 function Nav() {
-    let [menu, c_menu] = useState('');
+    let [menu, c_menu] = useState('home');
 
 
   

@@ -9,10 +9,8 @@ function Mable(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>사장님 유쾌. 울회사 대표이름 알고있음. 너무 시리어스하지 않은 분위기에 돼지 소 모두 가볍게 즐길 수 있음.</p>
+        <p>이름 기억안나는데 양념된 돼지고기 비추, 육회도 그닥</p>
         <div className='photo'>
             <img src={p1}></img>
         </div>

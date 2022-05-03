@@ -12,10 +12,10 @@ function Songhwa(props) {
     <div className='photoModal'>
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>지금까지 다닌 만두, 가지튀김 통틀어서 단연 최고. 미쳤음 존맛, 도삭면 말고 가지튀김을 꼭 먹자.
+            보통 군만두는 품절이라 없기 때문에 만약 있다면 시켜서 먹자.
+        </p>
+        <p>사실 단점이 없음. 만두, 가지튀김, 면 모두 가성비에 맛 완벽(진심)</p>
         <div className='photo'>
             <img src={p1}/>
             <img src={p2}/>

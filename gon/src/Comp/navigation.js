@@ -7,6 +7,17 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 function Nav() {
     let [menu, c_menu] = useState('home');
 
+    useEffect(()=>{
+      if (matchMedia("screen and (max-width:1050px)").matches) {
+        document.querySelector('nav .container ul').style.display = 'none';
+        document.querySelector('#menu-btn').style.display = 'inline-block';
+        document.querySelector('#close-btn').style.display = 'none';
+      } else {
+        null
+      }
+      
+    },[menu])
+
 
   
     return(

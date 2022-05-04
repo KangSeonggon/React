@@ -388,6 +388,7 @@ section.contact form .btn:hover {
 
 /* footer */
 footer {
+  display: none;
   bottom: 0;
   width: 100%;
   padding: 23px 0;
@@ -1007,8 +1008,9 @@ section.archive .overlay .boardcontent .content a:hover {
   }
   
   section.kakao .photoModal {
-    top: 44vh;
-    width: 100vw;
+    margin-right: 10rem;
+    top: 43vh;
+    width: 95vw;
     height: 55vh;
   }
 

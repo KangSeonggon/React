@@ -1,8 +1,8 @@
+/*eslint-disable*/
 import React from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import {Link} from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -28,11 +28,12 @@ function Home() {
               spaceBetween={50}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              // autoplay={{ delay: 3000 }}
+              // autoplay={{ delay: 2000 }}
               >
               <SwiperSlide>
                 <div className='info'>
-                  <h1>React Web Developer</h1>
+                  <h1 id="maxmedia">React Web Developer</h1>
+                  <h1 id="minmedia">React web</h1>
                   <h3>Hello friends, I'm Gonn</h3>
                   <p>People who succeed have momentum. The more they succeed, the more they want to succeed and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.</p>
                   <p>-</p>
@@ -43,8 +44,9 @@ function Home() {
               <SwiperSlide>
                 
                 <div className="info">
-                  <h1>Introduce Daily-Life</h1>
-                  <h3>Food, sports ...</h3>
+                  <h1 id="maxmedia">Introduce daily life</h1>
+                  <h1 id="minmedia">Daily life</h1>
+                  <h3>real kk</h3>
                   <p>Restaurant</p>
                   <p>다녀온 맛집을 소개해요. 지도와 짧은 리뷰, 사진도 있음ㅋ</p>
                   <p>Basketball</p>

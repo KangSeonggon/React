@@ -44,6 +44,13 @@
   background: var(--color-primary);
 }
 
+#minmedia {
+  display: none;
+}
+#maxmedia {
+  display: block;
+}
+
 html {
   font-size: 15px;
   overflow-x: hidden;
@@ -729,8 +736,8 @@ section.archive .overlay .boardcontent .boardcontentCate .catelist{
 section.archive .overlay .boardcontent .boardcontentCate li {
   text-align: center;
   border-bottom: 1px solid var(--color-light3);
-  padding: 1rem;
-  margin: 0 1rem 0
+  padding: 0.5rem;
+  margin: 0 0.5rem 0
 }
 
 section.archive .overlay .boardcontent li a {
@@ -791,8 +798,14 @@ section.archive .overlay .boardcontent .content a:hover {
   img {
     display: none;
   }
+  #maxmedia {
+    display: none;
+  }
+  #minmedia {
+    display: block;
+  }
   section.landing .container {
-    margin-top: 5rem;
+    margin-top: 3rem;
     grid-template-columns: 3rem auto;
   }
   #flamingo {
@@ -967,34 +980,36 @@ section.archive .overlay .boardcontent .content a:hover {
   }
 
   section.kakao {
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
   }
   section.kakao .location ul {
     height: 10%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap: 1rem;
+    grid-gap: 0rem;
   }
 
   section.kakao .kakaomap {
     width: 100vw;
-    height: 50vh;
+    height: 35vh;
   }
   section.kakao .foodlist {
     padding-top: 0;
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
   }
   section.kakao .location_list {
     padding-bottom: 5rem;
   }
   
   section.kakao .photoModal {
-    top: 50vh;
+    top: 44vh;
     width: 100vw;
-    height: 50vh;
+    height: 55vh;
   }
 
   /* contact */
@@ -1130,6 +1145,16 @@ section.archive .overlay .boardcontent .content a:hover {
   }
   #p2 {
     display: none;
+  }
+
+  footer {
+    display: none;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    margin: 0.1rem;
+    padding: 0;
+    background: var(--color-light);
   }
 
 }

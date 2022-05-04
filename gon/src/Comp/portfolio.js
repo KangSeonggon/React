@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import { Route, Link, Switch, Routes } from 'react-router-dom';
 import React from 'react';
-import cv from '../KangSeonggon.pdf'
+import cv from '../KangSeonggon_cv.pdf'
 import rhino from '../rhino.png'
 
 function Portfolio() {

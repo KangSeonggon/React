@@ -1,4 +1,4 @@
-/*global kakao*/ 
+/*global kakao*/
 import React, { useEffect , useState } from 'react'
 import { Route, Link, useHistory, useParams } from 'react-router-dom';
 
@@ -296,7 +296,7 @@ function Kakaomap(){
         var mapContainer = document.getElementById('map'),
             mapOption = {
                 center: new kakao.maps.LatLng(location.description[3], location.description[4]),
-                level: 2
+                level: 6
             };
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({zIndex:1});

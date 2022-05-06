@@ -5,6 +5,10 @@ import { Route, Link, useHistory, useParams } from 'react-router-dom';
 import {BsFillCameraFill} from 'react-icons/bs'
 import { __RouterContext } from 'react-router';
 
+// firebase db
+import {firestore} from '../index.js'
+import "firebase/firestore"; 
+
 
 
 import Chunmi from './review/chunmichun'
@@ -24,9 +28,12 @@ import Sinbal from './review/sinbal';
 
 
 function Kakaomap(){
+    //firebase
+    let posi = firestore.collection("kakao_positions");
+        
+    posi.doc("rs5pv5bgKMzSk71ZfN1U").get().then((doc) => {
+        console.log(doc.data().review)});
 
-    
-    
     // not used
     let history = useHistory();
     let [photoModal, c_photoModal] = useState('');
@@ -43,6 +50,8 @@ function Kakaomap(){
 
     //음식점
     let [totalloca, c_totalloca] = useState(true);
+
+    
 
     
     // description = [위치카테고리, 이름, 주소, 위도, 경도, [음식분류]]

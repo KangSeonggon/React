@@ -53,7 +53,7 @@ function Archive() {
         {
             id : 3,
             category: 'Programming',
-            title:'Fuck Auto',
+            title:'Auto',
             date: ['2021.12.28','20:55'],
             content:'하지만 이렇게 글자를 무작위로 나열하는 것은 아무런 의미를 가지지 않습니다. 일반적으로 한국어 텍스트는 초성, 중성, 종성으로 구성된 낱개의 음절들이 모여 단어를 이루고 [1] 이 단어들이 다시 모여 문장을 이루는데, 글자들을 랜덤으로 타이핑해서는 음절이나 단어를 이룰 수 있는 확률은 극히 희박하겠죠. 그래서 이번에는 고양이에게 음절을 타이핑하는 방법을.......Read More'
         },
@@ -69,7 +69,7 @@ function Archive() {
             category: 'Etc',
             title:'퇴근시켜줘',
             date: ['2021.10.3','09:01'],
-            content:'나 왜 회사? 퇴근 시켜줘.......Read More'
+            content:'퇴근 시켜줘.......Read More'
         }
     ]);
     

@@ -5,9 +5,9 @@ import { Route, Link, useHistory, useParams } from 'react-router-dom';
 import {BsFillCameraFill} from 'react-icons/bs'
 import { __RouterContext } from 'react-router';
 
-// firebase db
-import {firestore} from '../index.js'
-import "firebase/firestore"; 
+// // firebase db
+// import {firestore} from '../index.js'
+// import "firebase/firestore"; 
 
 
 
@@ -25,14 +25,18 @@ import Mexicali from './review/mexicali';
 import Hayeon from './review/hayeon';
 import Igyeong from './review/igyeong';
 import Sinbal from './review/sinbal';
+import Jinmy from './review/jinmy';
+import Moon from './review/moon';
+import Yiyiyo from './review/yiyiyo';
+import Yuz from './review/yuz';
 
 
 function Kakaomap(){
     //firebase
-    let posi = firestore.collection("kakao_positions");
+    // let posi = firestore.collection("kakao_positions");
         
-    posi.doc("rs5pv5bgKMzSk71ZfN1U").get().then((doc) => {
-        console.log(doc.data().review)});
+    // posi.doc("rs5pv5bgKMzSk71ZfN1U").get().then((doc) => {
+    //     console.log(doc.data().review)});
 
     // not used
     let history = useHistory();
@@ -56,108 +60,134 @@ function Kakaomap(){
     
     // description = [위치카테고리, 이름, 주소, 위도, 경도, [음식분류]]
     let [positions, c_positions] = useState([
-    {
-        title: '송계옥',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">송계옥</div>', 
-        latlng: new kakao.maps.LatLng(37.5447, 127.0593),
-        description: ['성동','송계옥','서울 성동구 아차산로11길 11','37.5447', '127.0593',['Chicken']],
-        review : <Songgye photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '외가집', 
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">외가집</div>', 
-        latlng: new kakao.maps.LatLng(37.543706600475176, 127.05141790677251),
-        description: ['성동','외가집','서울 성동구 연무장길 17', '37.543706600475176', '127.05141790677251',['Pork']],
-        review : <Whygo photoModal={photoModal} c_photoModal={c_photoModal}  />
-
-    },
-    {
-        title: '마블상회',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">마블상회</div>', 
-        latlng: new kakao.maps.LatLng(37.543321, 127.054396),
-        description: ['성동','마블상회','서울 성동구 연무장7길 7','37.543321','127.054396',['Pork','Beef']],
-        review : <Mable photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '송화산시도삭면',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">송화산시도삭면</div>', 
-        latlng: new kakao.maps.LatLng(37.5392, 127.0672),
-        description: ['광진','송화산시도삭면','서울 광진구 아차산로30길 33','37.5392','127.0672',['Pork','Dimsum','Noodle']],
-        review : <Songhwa photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '오징어 상미수산',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">오징어 상미수산</div>', 
-        latlng: new kakao.maps.LatLng(37.557, 127.0766),
-        description: ['광진','오징어 상미수산','서울특별시 광진구 군자동 면목로 34','37.557','127.0766',['Fish']],
-        review : <Sangmi photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '천미천훠궈',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">천미천훠궈</div>', 
-        latlng: new kakao.maps.LatLng(37.5565, 127.0798),
-        description: ['광진','천미천훠궈','서울특별시 광진구 능동 천호대로110길 8-10','37.5565','127.0798',['Pork','Else']],
-        review : <Chunmi photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '제국한우짝갈비',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">제국한우짝갈비</div>', 
-        latlng: new kakao.maps.LatLng(37.5203, 127.036),
-        description: ['강남','제국한우짝갈비','서울 강남구 언주로148길 14','37.5203','127.036',['Beef']],
-        review : <Jegook photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '대명소곱창',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">대명소곱창</div>', 
-        latlng: new kakao.maps.LatLng(37.5562, 127.0793),
-        description: ['광진','대명소곱창','서울특별시 광진구 능동 능동로 298','37.5562','127.0793',['Beef']],
-        review : <Daemye photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '스파카나폴리',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">스파카나폴리</div>', 
-        latlng: new kakao.maps.LatLng(37.5489, 126.9156),
-        description: ['마포','스파카나폴리','서울특별시 마포구 양화로6길 28','37.5489','126.9156',['Else']],
-        review : <Spaka photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '소바쿠',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">소바쿠</div>', 
-        latlng: new kakao.maps.LatLng(37.5527, 127.0888),
-        description: ['광진','소바쿠','서울 광진구 천호대로 650','37.5527','127.0888',['Noodle']],
-        review : <Sobaku photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '멕시칼리',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">멕시칼리</div>', 
-        latlng: new kakao.maps.LatLng(37.5527, 127.0884),
-        description: ['광진','멕시칼리','서울특별시 광진구 능동로36길 181','37.5527','127.0884',['Pork','Beef','Fish','Else']],
-        review : <Mexicali photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '하연옥',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
-        latlng: new kakao.maps.LatLng(35.194, 128.0607),
-        description: ['진주','하연옥','경상남도 진주시 진주대로 1317-20','35.194','128.0607',['Noodle']],
-        review : <Hayeon photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '이경문',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">이경문 순대곱창</div>', 
-        latlng: new kakao.maps.LatLng(37.5731, 126.9908),
-        description: ['종로','이경문 순대곱창','서울특별시 광진구 능동로36길 181','37.5731','126.9908',['Pork','Else']],
-        review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
-    },
-    {
-        title: '신발원',
-        content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">신발원</div>', 
-        latlng: new kakao.maps.LatLng(35.1148, 129.0387),
-        description: ['부산','신발원','부산광역시 동구 대영로243번길 62','35.1148','129.0387',['Dimsum']],
-        review : <Sinbal photoModal={photoModal} c_photoModal={c_photoModal}  />
-    }
+        {
+            title: '진미평양냉면',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">진미평양냉면</div>', 
+            latlng: new kakao.maps.LatLng(37.5161, 127.036),
+            description: ['강남','진미평양냉면','서울특별시 강남구 학동로 305-3','37.5161','127.036',['Noodle']],
+            review : <Jinmy photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '제국한우짝갈비',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">제국한우짝갈비</div>', 
+            latlng: new kakao.maps.LatLng(37.5203, 127.036),
+            description: ['강남','제국한우짝갈비','서울 강남구 언주로148길 14','37.5203','127.036',['Beef']],
+            review : <Jegook photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '송화산시도삭면',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">송화산시도삭면</div>', 
+            latlng: new kakao.maps.LatLng(37.5392, 127.0672),
+            description: ['광진','송화산시도삭면','서울 광진구 아차산로30길 33','37.5392','127.0672',['Pork','Dimsum','Noodle']],
+            review : <Songhwa photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '오징어 상미수산',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">오징어 상미수산</div>', 
+            latlng: new kakao.maps.LatLng(37.557, 127.0766),
+            description: ['광진','오징어 상미수산','서울특별시 광진구 군자동 면목로 34','37.557','127.0766',['Fish']],
+            review : <Sangmi photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '천미천훠궈',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">천미천훠궈</div>', 
+            latlng: new kakao.maps.LatLng(37.5565, 127.0798),
+            description: ['광진','천미천훠궈','서울특별시 광진구 능동 천호대로110길 8-10','37.5565','127.0798',['Pork','Else']],
+            review : <Chunmi photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '대명소곱창',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">대명소곱창</div>', 
+            latlng: new kakao.maps.LatLng(37.5562, 127.0793),
+            description: ['광진','대명소곱창','서울특별시 광진구 능동 능동로 298','37.5562','127.0793',['Beef']],
+            review : <Daemye photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '소바쿠',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">소바쿠</div>', 
+            latlng: new kakao.maps.LatLng(37.5527, 127.0888),
+            description: ['광진','소바쿠','서울 광진구 천호대로 650','37.5527','127.0888',['Noodle']],
+            review : <Sobaku photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '멕시칼리',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">멕시칼리</div>', 
+            latlng: new kakao.maps.LatLng(37.5527, 127.0884),
+            description: ['광진','멕시칼리','서울특별시 광진구 능동로36길 181','37.5527','127.0884',['Pork','Beef','Fish','Else']],
+            review : <Mexicali photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '지새는달',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">지새는달</div>', 
+            latlng: new kakao.maps.LatLng(37.5554, 127.082),
+            description: ['광진','지새는달','서울특별시 광진구 능동로36길 53','37.5554','127.082',['Else']],
+            review : <Moon photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '이이요',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">이이요</div>', 
+            latlng: new kakao.maps.LatLng(37.5552, 127.0789),
+            description: ['광진','이이요','서울특별시 광진구 능동 능동로32길 6','37.5552','127.0789',['Fish','Else']],
+            review : <Yiyiyo photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '스파카나폴리',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">스파카나폴리</div>', 
+            latlng: new kakao.maps.LatLng(37.5489, 126.9156),
+            description: ['마포','스파카나폴리','서울특별시 마포구 양화로6길 28','37.5489','126.9156',['Else']],
+            review : <Spaka photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '송계옥',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">송계옥</div>', 
+            latlng: new kakao.maps.LatLng(37.5447, 127.0593),
+            description: ['성동','송계옥','서울 성동구 아차산로11길 11','37.5447', '127.0593',['Chicken']],
+            review : <Songgye photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '외가집', 
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">외가집</div>', 
+            latlng: new kakao.maps.LatLng(37.543706600475176, 127.05141790677251),
+            description: ['성동','외가집','서울 성동구 연무장길 17', '37.543706600475176', '127.05141790677251',['Pork']],
+            review : <Whygo photoModal={photoModal} c_photoModal={c_photoModal}  />
     
-
-    ]);
+        },
+        {
+            title: '마블상회',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">마블상회</div>', 
+            latlng: new kakao.maps.LatLng(37.543321, 127.054396),
+            description: ['성동','마블상회','서울 성동구 연무장7길 7','37.543321','127.054396',['Pork','Beef']],
+            review : <Mable photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '이경문',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">이경문 순대곱창</div>', 
+            latlng: new kakao.maps.LatLng(37.5731, 126.9908),
+            description: ['종로','이경문 순대곱창','서울특별시 광진구 능동로36길 181','37.5731','126.9908',['Pork','Else']],
+            review : <Igyeong photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '유즈라멘',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">유즈라멘</div>', 
+            latlng: new kakao.maps.LatLng(37.5778, 126.9865),
+            description: ['종로','유즈라멘','서울특별시 종로구 북촌로2길 14','37.5778','126.9865',['Pork','Else']],
+            review : <Yuz photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '하연옥',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">하연옥</div>', 
+            latlng: new kakao.maps.LatLng(35.194, 128.0607),
+            description: ['진주','하연옥','경상남도 진주시 진주대로 1317-20','35.194','128.0607',['Noodle']],
+            review : <Hayeon photoModal={photoModal} c_photoModal={c_photoModal}  />
+        },
+        {
+            title: '신발원',
+            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">신발원</div>', 
+            latlng: new kakao.maps.LatLng(35.1148, 129.0387),
+            description: ['부산','신발원','부산광역시 동구 대영로243번길 62','35.1148','129.0387',['Dimsum']],
+            review : <Sinbal photoModal={photoModal} c_photoModal={c_photoModal}  />
+        }
+        ]);
     let [copy_positions, c_copy_positions] = useState([...positions]);
 
     // // 사진 모달창
@@ -337,8 +367,8 @@ function Kakaomap(){
         c_copy_positions([...positions]);
         var mapContainer = document.getElementById('map'),
         mapOption = { 
-            center: new kakao.maps.LatLng(37.5503,127.04), 
-            level: 7
+            center: new kakao.maps.LatLng(37.55,127.05), 
+            level: 8
         };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -394,11 +424,11 @@ function Kakaomap(){
                         
                     </ul>
                     <div className='location_sort'>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('광진'); }} >광진</Link></li>                           
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >강남</Link></li>
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('광진'); }} >광진</Link></li>   
+                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('마포'); }} >마포</Link></li>                        
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('성동'); }} >성동</Link></li>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('종로'); }} >종로</Link></li>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('강남'); }} >강남</Link></li>
-                            <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('마포'); }} >마포</Link></li>
                             <li><Link to='/dashboard/food' onClick={ ()=>{c_location2('어딘가'); }} >어딘가</Link></li>
 
                     </div>

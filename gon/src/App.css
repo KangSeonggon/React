@@ -496,6 +496,7 @@ section.kakao .location_list {
   text-align: center;
   align-items: center;
   row-gap: 2.2rem;
+  padding-bottom: 2rem;
 }
 section.kakao .location_list li a {
   color: var(--color-black);
@@ -536,24 +537,25 @@ section.kakao .location_list svg:hover {
 section.kakao .photoModal {
   background: var(--color-gray);
   position: absolute;
-  top: 6rem;
-  width: 49vw;
-  height: 88vh;
+  top: 5.5rem;
+  width: 48.5vw;
+  height: 89vh;
   opacity: 0.98;
   padding: 2rem;
   overflow-y: scroll;
 }
 section.kakao .photoModal h2 {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
 }
 section.kakao .photoModal p {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 section.kakao .photoModal #gobackSvg {
-  right: 1.5rem;
+  right: 0rem;
   font-size: 2rem;
   display:block;
   position: sticky;
@@ -565,12 +567,14 @@ section.kakao .photoModal #gobackSvg:hover {
   color: var(--color-primary);
 }
 section.kakao .photoModal svg {
-  font-size: 30px;
+  font-size: 22px;
 }
 section.kakao .photoModal p {
   color: var(--color-black);
 }
-
+section.kakao .photoModal #reviewstar {
+  padding-bottom: 1rem;
+}
 
 
 
@@ -730,6 +734,11 @@ section.archive .overlay .boardcontent .boardcontentCate {
   background: var(--color-white);
 }
 
+section.archive .overlay .boardcontent .boardcontentCate .addPost{
+  text-align: center;
+  padding-top: 1rem;
+}
+
 section.archive .overlay .boardcontent .boardcontentCate .catelist{
   margin-top: 5rem;
 }
@@ -786,6 +795,13 @@ section.archive .overlay .boardcontent .content a:hover {
   color: var(--color-primary);
 }
 
+
+section.archive .overlay .boardcontent .archiveModal {
+  position: absolute;
+  background: var(--color-gray);
+  width: inherit;
+  top: 10rem;
+}
 
 
 
@@ -1009,7 +1025,7 @@ section.archive .overlay .boardcontent .content a:hover {
   
   section.kakao .photoModal {
     margin-right: 10rem;
-    top: 43vh;
+    top: 44vh;
     width: 95vw;
     height: 55vh;
   }

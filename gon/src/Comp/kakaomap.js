@@ -5,10 +5,6 @@ import { Route, Link, useHistory, useParams } from 'react-router-dom';
 import {BsFillCameraFill} from 'react-icons/bs'
 import { __RouterContext } from 'react-router';
 
-// // firebase db
-// import {firestore} from '../index.js'
-// import "firebase/firestore"; 
-
 
 
 import Chunmi from './review/chunmichun'
@@ -32,11 +28,6 @@ import Yuz from './review/yuz';
 
 
 function Kakaomap(){
-    //firebase
-    // let posi = firestore.collection("kakao_positions");
-        
-    // posi.doc("rs5pv5bgKMzSk71ZfN1U").get().then((doc) => {
-    //     console.log(doc.data().review)});
 
     // not used
     let history = useHistory();
@@ -101,13 +92,6 @@ function Kakaomap(){
             latlng: new kakao.maps.LatLng(37.5562, 127.0793),
             description: ['광진','대명소곱창','서울특별시 광진구 능동 능동로 298','37.5562','127.0793',['Beef']],
             review : <Daemye photoModal={photoModal} c_photoModal={c_photoModal}  />
-        },
-        {
-            title: '소바쿠',
-            content:'<div class="overlaybox" style="width:150px;height:50px; background:var(--color-dark); color:var(--color-white); text-align:center;">소바쿠</div>', 
-            latlng: new kakao.maps.LatLng(37.5527, 127.0888),
-            description: ['광진','소바쿠','서울 광진구 천호대로 650','37.5527','127.0888',['Noodle']],
-            review : <Sobaku photoModal={photoModal} c_photoModal={c_photoModal}  />
         },
         {
             title: '멕시칼리',
@@ -349,7 +333,7 @@ function Kakaomap(){
             image : markerImage 
         });
 
-
+        
         var infowindow = new kakao.maps.InfoWindow({
             content: location.content
         });
@@ -443,12 +427,13 @@ function Kakaomap(){
                         })}
                     </div>
                     {positions.map(function(data){
-                        // console.log(data.review)
+                        let reviewModal = data.review
+                        
                         return(
                             <>
                             {
                                 photoModal === data.description[1]
-                                ? data.review
+                                ? reviewModal
                                 : null
                             }
                             </>

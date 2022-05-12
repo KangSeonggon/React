@@ -6,14 +6,33 @@ import {Link} from 'react-router-dom'
 import flamingo from '../flamingo.png'
 import { useSwiperSlide } from 'swiper/react';
 
+// firebase db
+import {firestore} from '../index.js'
+import 'firebase/compat/firestore';
+
+
 function Archive() {
+
+    let [archiveModal, c_archiveModal] = useState('start');
+    let date = new Date();
+
+    // firebase
+    const guestbook = firestore.collection('guestbook')
+    // guestbook.get().then((결과)=>{
+    //     결과.forEach((doc)=>{
+    //         console.log(doc.data())
+    //     })
+    // })
+    
+    let [post,c_post] = useState([]);
+
     
     let [title, c_title] = useState('GuestBook');
 
     let [title_sort,c_title_sort] = useState([
         {
             title: 'GuestBook',
-            sortcate: ['All','Ascending','Descending']
+            sortcate: ['All']
         },
         {
             title: 'Programming',
@@ -72,6 +91,26 @@ function Archive() {
             content:'퇴근 시켜줘.......Read More'
         }
     ]);
+
+
+    // 게시글 정렬
+    useEffect(()=> {
+        
+        guestbook.where('id','>=',1).orderBy('id','desc').get().then((docs)=>{
+            var arr = [];
+            docs.forEach((doc)=> {
+                if (doc.data().category == title) {
+                    arr.push(doc.data())
+                }
+            })
+            c_post(arr);
+            
+        })
+        
+        
+        
+        
+    },[title])
     
 
     // 사이드 메뉴 바꾸느라 헤맴
@@ -79,6 +118,7 @@ function Archive() {
         let sortdata = title_sort.find(function(data){
             return data.title == title});
             c_sortdata2(sortdata.sortcate);
+            
     },[title])
 
    return(
@@ -102,22 +142,55 @@ function Archive() {
                         </div>
                         <div className='boardcontent'>
                             <div className='boardcontentCate'>
+                                <div className='addPost'>
+                                    {
+                                        title === 'GuestBook'
+                                        ? <button>Add Post</button>
+                                        : null
+                                    }
+                                    
+                                </div>
                                 <div className='catelist'>
                                     {
-                                        sortdata2.map(function(data){
+                                        sortdata2.map(function(data,i){
                                             return(
-                                                <li><Link to='/archive'>{data}</Link></li>
+                                                <li><Link to='/archive' key={i}>{data}</Link></li>
                                             )
                                         })
                                     }
 
-                                    {/* <li><Link to='/archive'>All</Link></li>
-                                    <li><Link to='/archive'>Example</Link></li>
-                                    <li><Link to='/archive'>gon</Link></li> */}
                                 </div>
                             </div>
                             <div className='boardcontentCont'>
-                                { content.map(function(data) {
+                                 {
+                                     post.map(function(data) {
+                                         return(
+                                             <>
+                                             {
+                                                 <div key={data.id} className='contentlist'>
+                                                    <Link to='/archive'>
+                                                        <h3>{data.title}</h3>
+                                                    </Link>
+                                                    <div className='contentdate'>
+                                                        <MdDateRange />
+                                                        <p id='date'>{data.date[0]}</p>
+                                                        <MdAccessTime />
+                                                        <p>{data.date[1]}</p>
+                                                    </div>
+                                                    <div className='content'>
+                                                        <Link to='/archive' onClick={()=>{c_archiveModal(data.title)}}>
+                                                            <p>{data.content}</p>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                             }
+                                             </>
+                                         )
+                                     })
+                                     
+                                 }
+                                
+                                {/* { content.map(function(data) {
                                     return(
                                         <>
                                         {
@@ -143,7 +216,7 @@ function Archive() {
                                         </>
                                         
                                     )
-                                })}
+                                })} */}
 
 
                             </div>

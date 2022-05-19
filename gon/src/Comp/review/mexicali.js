@@ -17,7 +17,7 @@ function Mexicali(props) {
         <IoMdArrowRoundBack id='gobackSvg'  onClick={() => { props.c_photoModal('') }} />
         <h2>Review</h2>
         <div id='reviewstar'><ImStarFull /><ImStarFull /><ImStarFull /><ImStarFull /><ImStarHalf /></div>
-        <p>2인이서 칼리 컴비네이션에 소기기 타코 2개 추가해서 배불리 먹음.
+        <p>2인이서 칼리 컴비네이션에 소고기 타코 2개 추가해서 배불리 먹음.
             컴비네이션 구성은 Fish타코, 퀘사디아, 빠빠, 치즈 나초.
             가게 분위기도 괜찮고 무엇보다 맛이 정말 괜찮다. 근처에 있어서 그냥 들어간 집인데 대만족.
             

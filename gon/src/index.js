@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter  } from 'react-router-dom';
 
-import firebase from "firebase/compat/app"
-import 'firebase/compat/firestore';
+// import firebase from "firebase/compat/app"
+// import 'firebase/compat/firestore';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,19 +17,19 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//firebase.js
-const firebaseConfig = {
-  apiKey: "AIzaSyDMPB8k7ieF3Wtd4fszDuLtMjHRlpwrbwE",
-  authDomain: "gon111.firebaseapp.com",
-  databaseURL: "https://gon111-default-rtdb.firebaseio.com",
-  projectId: "gon111",
-  storageBucket: "gon111.appspot.com",
-  messagingSenderId: "599467628372",
-  appId: "1:599467628372:web:5205e9e9c981bba4879ac1",
-  measurementId: "G-N401S0RNC0"
-};
-firebase.initializeApp(firebaseConfig);
-const firestore = firebase.firestore();
+// //firebase.js
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDMPB8k7ieF3Wtd4fszDuLtMjHRlpwrbwE",
+//   authDomain: "gon111.firebaseapp.com",
+//   databaseURL: "https://gon111-default-rtdb.firebaseio.com",
+//   projectId: "gon111",
+//   storageBucket: "gon111.appspot.com",
+//   messagingSenderId: "599467628372",
+//   appId: "1:599467628372:web:5205e9e9c981bba4879ac1",
+//   measurementId: "G-N401S0RNC0"
+// };
+// firebase.initializeApp(firebaseConfig);
+// const firestore = firebase.firestore();
 
 
 
@@ -37,4 +37,4 @@ const firestore = firebase.firestore();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-export { firestore };
+// export { firestore };

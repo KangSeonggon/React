@@ -29,7 +29,7 @@ function Nav() {
             <ul>
               <li><Link id='home' to='/'  onClick={()=> {c_menu('home')}} >HOME</Link></li>
               <li><Link id='dashboard' to='/dashboard/food' onClick={()=> {c_menu('restaurant')}} >RESTAURANT</Link></li>
-              <li><Link id='project' to='/archive' onClick={()=> {c_menu('archive')}} >ARCHIVE</Link></li>
+              {/* <li><Link id='project' to='/archive' onClick={()=> {c_menu('archive')}} >ARCHIVE</Link></li> */}
               <li><Link id='resume' to='/resume' onClick={()=> {c_menu('resume')}} >RESUME</Link></li>
               <li><Link id='contact' to='/contact' onClick={()=> {c_menu('contact')}} >CONTACT</Link></li>
             </ul>

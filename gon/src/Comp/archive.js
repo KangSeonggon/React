@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom'
 import flamingo from '../flamingo.png'
 import { useSwiperSlide } from 'swiper/react';
 
-// firebase db
-import {firestore} from '../index.js'
-import 'firebase/compat/firestore';
+// // firebase db
+// import {firestore} from '../index.js'
+// import 'firebase/compat/firestore';
 
 
 // img
